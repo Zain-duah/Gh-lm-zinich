@@ -6,11 +6,8 @@ export default async function handler(req, res) {
 
   const allowed = [
     'meta-llama/llama-4-scout-17b-16e-instruct',
-    'meta-llama/llama-4-maverick-17b-128e-instruct',
-    'llama-3.3-70b-versatile',
-    'llama-3.1-8b-instant',
-    'gemma2-9b-it',
-    'mixtral-8x7b-32768',
+
+    'llama-3.3-70b-versatile'
   ];
   const safeModel = allowed.includes(model) ? model : allowed[2];
 
