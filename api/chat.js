@@ -5,11 +5,9 @@ export default async function handler(req, res) {
   if (!messages || !Array.isArray(messages)) return res.status(400).json({ error: 'Invalid request' });
 
   const allowed = [
-    'meta-llama/llama-4-scout-17b-16e-instruct',
-
     'llama-3.3-70b-versatile',
 'openai/gpt-oss-120b' ];
-  const safeModel = allowed.includes(model) ? model : allowed[2];
+  const safeModel = allowed.includes(model) ? model : allowed[0];
 
   try {
     const r = await fetch('https://api.groq.com/openai/v1/chat/completions', {
