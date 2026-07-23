@@ -18,7 +18,7 @@ export default async function handler(req, res) {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${process.env.GROQ_API_KEY}`,
       },
-      body: JSON.stringify({ model: safeModel, messages, max_tokens: 2048 }),
+      body: JSON.stringify({ model: safeModel, messages, max_tokens: 3048 }),
     });
     const data = await r.json();
     if (!r.ok) return res.status(r.status).json({ error: data.error?.message || 'Groq error' });
